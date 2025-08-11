@@ -4,7 +4,14 @@ workflows:
     instance_type: mac_mini_m1
     environment:
       flutter: stable
+      groups:
+        - credentials
     scripts:
+      - name: Create credentials files from environment variables
+        script: |
+          set -e
+          echo $GOOGLE_CREDENTIALS_JSON > assets/credentials.json
+          echo $GOOGLE_CREDENTIALS_JSON > assets/jwenochs-subattendance-0203df541a27.json
       - name: Get Flutter packages
         script: flutter pub get
       - name: Build iOS app
