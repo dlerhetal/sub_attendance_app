@@ -41,6 +41,7 @@ workflows:
                      -scheme Runner \
                      -config Release \
                      -sdk iphoneos \
+                     DEVELOPMENT_TEAM="S44UV7KL44" \
                      CODE_SIGN_IDENTITY="Apple Distribution: Dale Linn (S44UV7KL44)" \
                      PROVISIONING_PROFILE_SPECIFIER="sub_attendance_app_AppStore" \
                      clean build
