@@ -35,6 +35,15 @@ workflows:
           </dict>
           </plist>
           EOF
+      - name: Set Xcode signing properties
+        script: |
+          xcodebuild -project ios/Runner.xcodeproj \
+                     -scheme Runner \
+                     -config Release \
+                     -sdk iphoneos \
+                     CODE_SIGN_IDENTITY="Apple Distribution: Dale Linn (S44UV7KL44)" \
+                     PROVISIONING_PROFILE_SPECIFIER="sub_attendance_app_AppStore" \
+                     clean build
       - name: Build iOS app
         script: flutter build ipa --export-options-plist=ios/ExportOptions.plist # Modified
     artifacts:
