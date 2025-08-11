@@ -16,6 +16,12 @@ workflows:
       - name: Get Flutter packages
         script: flutter pub get
       - name: Build iOS app
-        script: flutter build ios --no-codesign
+        script: flutter build ipa # Changed from ios --no-codesign
     artifacts:
       - build/ios/ipa/*.ipa
+    signing:
+      ios:
+        distribution_type: app_store
+        bundle_id: com.dlerhetal.subattendanceapp
+        certificate_id: sub_attendance
+        provisioning_profile_id: sub_attendance
