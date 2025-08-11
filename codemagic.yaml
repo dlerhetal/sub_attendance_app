@@ -10,6 +10,7 @@ workflows:
       - name: Create credentials files from environment variables
         script: |
           set -e
+          mkdir -p assets
           echo $GOOGLE_CREDENTIALS_JSON > assets/credentials.json
           echo $GOOGLE_CREDENTIALS_JSON > assets/jwenochs-subattendance-0203df541a27.json
       - name: Get Flutter packages
