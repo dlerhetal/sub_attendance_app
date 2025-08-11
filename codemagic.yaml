@@ -19,9 +19,10 @@ workflows:
         script: flutter build ipa # Changed from ios --no-codesign
     artifacts:
       - build/ios/ipa/*.ipa
-    signing:
-      ios:
-        distribution_type: app_store
-        bundle_id: com.dlerhetal.subattendanceapp
-        certificate_id: sub_attendance
-        provisioning_profile_id: sub_attendance
+
+signing:
+  ios:
+    distribution_type: app_store
+    bundle_id: com.dlerhetal.subattendanceapp
+    certificate_id: sub_attendance
+    provisioning_profile_id: sub_attendance
