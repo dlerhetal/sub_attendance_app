@@ -17,6 +17,11 @@ workflows:
           echo $GOOGLE_CREDENTIALS_JSON > assets/jwenochs-subattendance-0203df541a27.json
       - name: Get Flutter packages
         script: flutter pub get
+      - name: Install iOS CocoaPods
+        script: |
+          cd ios
+          pod install --repo-update
+          cd ..
       - name: Create ExportOptions.plist
         script: |
           cat << EOF > ios/ExportOptions.plist
