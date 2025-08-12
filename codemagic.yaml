@@ -43,7 +43,7 @@ workflows:
                      -sdk iphoneos \
                      DEVELOPMENT_TEAM="S44UV7KL44" \
                      CODE_SIGN_IDENTITY="Apple Distribution: Dale Linn (S44UV7KL44)" \
-                     PROVISIONING_PROFILE_SPECIFIER="sub_attendance_app_AppStore" \
+                     PROVISIONING_PROFILE_SPECIFIER="sub_attendance_AppStore" \
                      clean build
       - name: Build iOS app
         script: flutter build ipa --export-options-plist=ios/ExportOptions.plist # Modified
