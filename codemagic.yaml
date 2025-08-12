@@ -41,9 +41,12 @@ workflows:
                      -scheme Runner \
                      -config Release \
                      -sdk iphoneos \
+                     DEVELOPMENT_TEAM="S44UV7KL44" \
+                     CODE_SIGN_IDENTITY="Apple Distribution: Dale Linn (S44UV7KL44)" \
+                     PROVISIONING_PROFILE_SPECIFIER="sub_attendance_AppStore" \
                      clean build
       - name: Build iOS app
-        script: flutter build ipa --no-codesign --export-options-plist=ios/ExportOptions.plist # Modified
+        script: flutter build ipa --export-options-plist=ios/ExportOptions.plist # Modified
     artifacts:
       - build/ios/ipa/*.ipa
 
